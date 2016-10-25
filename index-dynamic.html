@@ -5,13 +5,26 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 <link href="css/style.css" rel="stylesheet" />
+<style>
+
+.page4 h2{
+margin:auto !important;
+position:absolute !important;
+top:0 !important;left:0;bottom:0;right:0;
+height:100px;
+transform:none;
+transition:all 3s;
+}
+.ani{
+transform:scale(3) rotate(360deg) !important;
+}</style>
 <script src='js/jquery.min.js'></script>
 </head>
 <body>
 <div id="cubeTransition">
 <div class="page1"><h2>cubeTransition.js</h2></div>
-<div class="page2"><h2>Elegant,</h2></div>
-<div class="page3"><h2>exected!</h2></div>
+<div class="page2"><h2 style='display:none'>Elegant,</h2></div>
+<div class="page3"><h2 style='position:absolute;left:0px;top:-150px'>exected!</h2></div>
 <div class="page4"><h2>Simple.</h2></div>
 </div>
 
@@ -22,10 +35,39 @@
 <script>
 function animationIn(i){
 console.log(i,'i\'m in')
+switch(i) {
+    case 1:
+        $('.page2 h2').fadeIn();
+        break;
+    case 2:
+        $('.page3 h2').animate({top:'40%',left:'30%'},1000);
+        break;
+	case 3:
+			   setTimeout(function(){
+		 $('.page4 h2').addClass('ani')
+		 console.log('hhh')
+		},0)
+        break;
+    default:
+        ;
+}
 }
 
 function animationOut(i){
 console.log(i,'i\'m out')
+switch(i) {
+    case 1:
+        $('.page2 h2').fadeOut();
+        break;
+    case 2:
+        $('.page3 h2').animate({top:0,left:0},1000);
+        break;
+	case 3:
+        $('.page4 h2').removeClass('ani')
+        break;
+    default:
+        ;
+}
 }
 </script>
 <script src='js/mousewheel.js'></script>

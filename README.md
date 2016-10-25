@@ -10,6 +10,8 @@ Idea comes from pageTransition, and I fix some bug of it, making the effect more
 
 [Demo page](https://html50.github.io/cubeTransition.js/)
 
+[Another demo with animation after switching pages](https://html50.github.io/cubeTransition.js/index-dynamic.html)
+
 Well, in my case, I copied some style sheets from [deinterfaz's pageTransitions](http://labs.deinterfaz.com/PageTransitions/transitions/bounce/). You should manage your CSS files for achieving the effect. I recommend you download the demo page and modify it for your own, it is the best way.
 
 
