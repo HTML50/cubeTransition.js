@@ -39,13 +39,14 @@
 	}
 
 	function show() {
+		$('#cubeTransition>div:eq(' + (next - 1) + ')').addClass('visible');
 		$('#cubeTransition>div:eq(' + (current - 1) + ')').addClass(outClass);
 		$('#cubeTransition>div:eq(' + (next - 1) + ')').addClass(inClass);	
 		$('#bullets>li:eq(' + (current - 1) + ')').removeClass('active');
 		$('#bullets>li:eq(' + (next - 1) + ')').addClass('active');
 		setTimeout(function() {
-			$('#cubeTransition>div:eq(' + (next - 1) + ')').addClass('visible');
-		}, 100)
+			
+		},50)
 		
 		animationOut(current - 1)
 		setTimeout(function() {
