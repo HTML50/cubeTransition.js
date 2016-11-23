@@ -4,8 +4,7 @@
 		current = 1,
 		next = 1,
 		outClass, inClass, onGoing = false;
-	$('#cubeTransition>div:eq(' + (current - 1) + ')').show()
-
+		$('#cubeTransition>div:eq(0)').addClass('visible');
 
 	for (i = 0; i < length; i++) {
 		var bullet = $("<li></li>");
@@ -17,7 +16,7 @@
 		if (!onGoing && next != i) {
 			onGoing = true;
 			next = i
-			outClass = current > i ? 'rotateCubeBottomOut top' : 'rotateCubeTopOut top'
+			outClass = current > i ? 'rotateCubeBottomOut' : 'rotateCubeTopOut'
 			inClass = current > i ? 'rotateCubeBottomIn' : 'rotateCubeTopIn';
 			show()
 		}
@@ -28,11 +27,11 @@
 			onGoing = true;
 			if (direction == 'up') {
 				next = current > 1 ? current - 1 : length;
-				outClass = 'rotateCubeBottomOut top';
+				outClass = 'rotateCubeBottomOut';
 				inClass = 'rotateCubeBottomIn';
 			} else {
 				next = current < length ? current + 1 : 1;
-				outClass = 'rotateCubeTopOut top';
+				outClass = 'rotateCubeTopOut';
 				inClass = 'rotateCubeTopIn';
 			}
 			show();
@@ -40,23 +39,28 @@
 	}
 
 	function show() {
+		$('#cubeTransition>div:eq(' + (next - 1) + ')').addClass('visible');
 		$('#cubeTransition>div:eq(' + (current - 1) + ')').addClass(outClass);
-		$('#cubeTransition>div:eq(' + (next - 1) + ')').addClass(inClass);
+		$('#cubeTransition>div:eq(' + (next - 1) + ')').addClass(inClass);	
 		$('#bullets>li:eq(' + (current - 1) + ')').removeClass('active');
 		$('#bullets>li:eq(' + (next - 1) + ')').addClass('active');
-		$('#cubeTransition>div:eq(' + (next - 1) + ')').show();
-		animationOut(current-1)
 		setTimeout(function() {
-			$('#cubeTransition>div:eq(' + (current - 1) + ')').hide();
+			
+		},50)
+		
+		animationOut(current - 1)
+		setTimeout(function() {
+			$('#cubeTransition>div:eq(' + (current - 1) + ')').removeClass('visible');
 		}, 500)
 
 		setTimeout(function() {
 			$('#cubeTransition>div:eq(' + (current - 1) + ')').removeClass(outClass);
 			$('#cubeTransition>div:eq(' + (next - 1) + ')').removeClass(inClass);
-			animationIn(next-1)
+			
+			animationIn(next - 1)
 			current = next;
 			onGoing = false;
-		}, 800)
+		}, 600)
 	}
 
 	$(document).ready(
