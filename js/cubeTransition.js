@@ -66,14 +66,20 @@
 	$(document).ready(
 
 	function() {
-		$(document).mousewheel(function(e, delta) {
-			e.preventDefault();
-			if (delta < 0) {
-				trans('down')
-			} else {
-				trans('up')
-			}
-		});
+    
+    //for scroll by mouse or MAC track pad
+      var indicator = new WheelIndicator({
+      callback: function(e){   
+          if (e.direction == 'down') {
+            trans('down')
+          } else {
+            trans('up')
+          }
+      }
+    });
+    indicator.getOption('preventMouse'); // true
+
+
 		$(document).keydown(function(e) {
 			if (e.keyCode == 38 || e && e.keyCode == 37) {
 				trans('up')
