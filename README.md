@@ -18,7 +18,7 @@ Well, in my case, I copied some style sheets from [deinterfaz's pageTransitions]
 
 # Usage
 
-**1.**create some lines in a DIV with a ID name `cubeTransition`
+**1** create some lines in a DIV with a ID name `cubeTransition`
 
 ```html
 <div id="cubeTransition">
@@ -29,7 +29,7 @@ Well, in my case, I copied some style sheets from [deinterfaz's pageTransitions]
 </div>
 ```
 
-**2.**include `cubeTransition.js` and `jquery.js`,`jquery.touchSwipe`,`mousewheel.js`. if you dont need mouse wheel or mobile swipe for your effect, you can delete the `EventLinstener` in `cubeTransition.js`.
+**2** include `cubeTransition.js` and `jquery.js`,`jquery.touchSwipe`,`wheel-indicator.js`. if you dont need mouse wheel or mobile swipe for your effect, you can delete the `EventLinstener` in `cubeTransition.js`.
 
 
 
@@ -37,29 +37,31 @@ Well, in my case, I copied some style sheets from [deinterfaz's pageTransitions]
 
 ```javascript
 <script src='js/jquery.min.js'></script>
-<script src='js/mousewheel.js'></script>
+<script src='js/wheel-indicator.js'></script>
 <script src="js/jquery.touchSwipe.js"></script>
 <script src="js/cubeTransition.js"></script>
 ```
 
-**3.**done, and remember to set some style for your element.
+**3 **done, and remember to set some style for your element.
 
 
 
 if you dont need some control method, delete  EventLinstener` in `cubeTransition.js`.
 
 ```javascript
-//mouse wheel
-$(document).mousewheel(function(e, delta) {
-			e.preventDefault();
-			if (delta < 0) {
-				trans('down')
-			} else {
-				trans('up')
-			}
-		});
-//this is for mouse wheel, delete whole of it and you lost wheel way
-
+ //for scroll by mouse or MAC track pad
+      var indicator = new WheelIndicator({
+      callback: function(e){   
+          if (e.direction == 'down') {
+            trans('down')
+          } else {
+            trans('up')
+          }
+      }
+    });
+    indicator.getOption('preventMouse'); // true
+//update this instead of mousewheel.js
+//in issuses#2 some friend want to use this plugin on MAC track pad
 
 //arrow key
 $(document).keydown(function(e) {
