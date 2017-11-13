@@ -12,7 +12,7 @@ Idea comes from pageTransition, and I fix some bug of it, making the effect more
 
 [Another demo with animation after switching pages](https://html50.github.io/cubeTransition.js/index-dynamic.html)
 
-Well, in my case, I copied some style sheets from [deinterfaz's pageTransitions](http://labs.deinterfaz.com/PageTransitions/transitions/bounce/). You should manage your CSS files for achieving the effect. I recommend you download the demo page and modify it for your own, it is the best way.
+Well, in this demo, I copied some style sheets from [deinterfaz's pageTransitions](http://labs.deinterfaz.com/PageTransitions/transitions/bounce/). Easiest way is clone this project and modify `index.html` for your use. 
 
 
 
@@ -42,11 +42,11 @@ Well, in my case, I copied some style sheets from [deinterfaz's pageTransitions]
 <script src="js/cubeTransition.js"></script>
 ```
 
-**3 **done, and remember to set some style for your element.
+**3 ** done, and remember to write CSS style for your element.
 
 
 
-if you dont need some control method, delete  EventLinstener` in `cubeTransition.js`.
+if you don't need some control method, delete `EventLinstener` in `cubeTransition.js`.
 
 ```javascript
  //for scroll by mouse or MAC track pad

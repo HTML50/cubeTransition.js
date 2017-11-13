@@ -44,15 +44,12 @@
 		$('#cubeTransition>div:eq(' + (next - 1) + ')').addClass(inClass);	
 		$('#bullets>li:eq(' + (current - 1) + ')').removeClass('active');
 		$('#bullets>li:eq(' + (next - 1) + ')').addClass('active');
-		setTimeout(function() {
-			
-		},50)
 		
 		animationOut(current - 1)
 		setTimeout(function() {
 			$('#cubeTransition>div:eq(' + (current - 1) + ')').removeClass('visible');
 		}, 500)
-
+ 
 		setTimeout(function() {
 			$('#cubeTransition>div:eq(' + (current - 1) + ')').removeClass(outClass);
 			$('#cubeTransition>div:eq(' + (next - 1) + ')').removeClass(inClass);
