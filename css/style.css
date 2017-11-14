@@ -18,6 +18,8 @@ html,body {
 	height: 100%;
 	-webkit-perspective: 1200px;
 	perspective: 1200px;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
 	-webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d;
 }
@@ -28,17 +30,9 @@ html,body {
 	position: absolute;
 	top: 0;
 	left: 0;
-	-webkit-backface-visibility: hidden;
-	backface-visibility: hidden;
-	-webkit-transform: translate3d(0, 0, 0);
-	transform: translate3d(0, 0, 0);
-	-webkit-transform-style: preserve-3d;
-	transform-style: preserve-3d;
 	font-size: 5em;
 	color: #fff;
 	visibility: hidden;
-	-webkit-transition:opacity 5ms;
-	transition:opacity 5ms;
 }
 
 #cubeTransition h2 {
