@@ -46,14 +46,11 @@
 		$('#bullets>li:eq(' + (next - 1) + ')').addClass('active');
 		
 		animationOut(current - 1)
+		
 		setTimeout(function() {
 			$('#cubeTransition>div:eq(' + (current - 1) + ')').removeClass('visible');
-		}, 500)
- 
-		setTimeout(function() {
 			$('#cubeTransition>div:eq(' + (current - 1) + ')').removeClass(outClass);
 			$('#cubeTransition>div:eq(' + (next - 1) + ')').removeClass(inClass);
-			
 			animationIn(next - 1)
 			current = next;
 			onGoing = false;
