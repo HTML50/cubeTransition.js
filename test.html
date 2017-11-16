@@ -53,7 +53,7 @@ var onGoing = false,current=1,next=2,length = 4;
 
     setTimeout(function() {
       document.querySelector('#cubeTransition>div:nth-child(' +current + ')').classList.remove('visible');
-      document.querySelector('#cubeTransition>div:nth-child(' + current+ ')').classList.remove(outClass);
+      document.querySelector('#cubeTransition>div:nth-child(' +current+ ')').classList.remove(outClass);
       document.querySelector('#cubeTransition>div:nth-child(' +next + ')').classList.remove(inClass);
 
       current = next;
