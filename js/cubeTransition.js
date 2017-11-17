@@ -46,9 +46,11 @@
 		$('#bullets>li:eq(' + (next - 1) + ')').addClass('active');
 		
 		animationOut(current - 1)
-		
-		setTimeout(function() {
+			setTimeout(function() {
 			$('#cubeTransition>div:eq(' + (current - 1) + ')').removeClass('visible');
+		}, 500)
+		setTimeout(function() {
+			
 			$('#cubeTransition>div:eq(' + (current - 1) + ')').removeClass(outClass);
 			$('#cubeTransition>div:eq(' + (next - 1) + ')').removeClass(inClass);
 			animationIn(next - 1)
@@ -61,7 +63,7 @@
 
 	function() {
     
-    //for scroll by mouse or MAC track pad
+//for scroll by mouse or MAC track pad
       var indicator = new WheelIndicator({
       callback: function(e){   
           if (e.direction == 'down') {
@@ -72,7 +74,8 @@
       }
     });
     indicator.getOption('preventMouse'); // true
-
+//update this instead of mousewheel.js
+//in issuses#2 a friend want to use this plugin on MAC track pad
 
 		$(document).keydown(function(e) {
 			if (e.keyCode == 38 || e && e.keyCode == 37) {

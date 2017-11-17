@@ -16,9 +16,7 @@ html,body {
 	position: relative;
 	width: 100%;
 	height: 100%;
-	-webkit-perspective: 1200px;
 	perspective: 1200px;
-	-webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d;
 }
 
@@ -30,7 +28,7 @@ html,body {
 	left: 0;
 	font-size: 5em;
 	color: #fff;
-	visibility: hidden;
+	display: none;
 }
 
 #cubeTransition h2 {
@@ -41,6 +39,11 @@ html,body {
 	text-align: center;
 	text-shadow: 1px 1px 0px rgba( 0, 0, 0, 0.1 );
 }
+
+.visible{
+	display: block !important;
+}
+
 
 .page1 {
 	background: #89b32f;
@@ -58,145 +61,69 @@ html,body {
 	background: green;
 }
 
-
-.visible{
-	visibility: visible !important;
-}
-
 .rotateCubeTopOut {
 	transform-origin: 50% 100%;
-	-webkit-transform-origin: 50% 100%;
-	animation: rotateCubeTopOut .6s both ease-in;
-	-webkit-animation: rotateCubeTopOut .6s both ease-in;
+	animation: rotateCubeTopOut .6s ease-in;
 }
 
 .rotateCubeTopIn {
 	transform-origin: 50% 0%;
-	-webkit-transform-origin: 50% 0%;
-	animation: rotateCubeTopIn .6s both ease-in;
-	-webkit-animation: rotateCubeTopIn .6s both ease-in;
+	animation: rotateCubeTopIn .6s ease-in;
 }
 
 .rotateCubeBottomOut {
-	-webkit-transform-origin: 50% 0%;
 	transform-origin: 50% 0%;
-	-webkit-animation: rotateCubeBottomOut .6s both ease-in;
-	animation: rotateCubeBottomOut .6s both ease-in;
+	animation: rotateCubeBottomOut .6s ease-in;
 }
 
 .rotateCubeBottomIn {
 	transform-origin: 50% 100%;
-	-webkit-transform-origin: 50% 100%;
-	-webkit-animation: rotateCubeBottomIn .6s both ease-in;
-	animation: rotateCubeBottomIn .6s both ease-in;
+	animation: rotateCubeBottomIn .6s ease-in;
 }
 
 @keyframes rotateCubeTopOut {
 	50% {
-		-webkit-animation-timing-function: ease-out;
 		        animation-timing-function: ease-out;
-
       transform: translateY(-50%) translateZ(-200px) rotateX(45deg);
 	}
 
 	100% {
-		opacity: .3;
-		-webkit-transform: translateY(-100%) rotateX(90deg);
       transform: translateY(-100%) rotateX(90deg);	
 	}
 	
 }
 
-@-webkit-keyframes rotateCubeTopOut {
-	50% {
-		-webkit-animation-timing-function: ease-out;
-		-webkit-transform: translateY(-50%) translateZ(-200px) rotateX(45deg);
-	}
-
-	100% {
-		opacity: .3;
-		-webkit-transform: translateY(-100%) rotateX(90deg);	
-	}
-	
-}
 
 @keyframes rotateCubeTopIn {
 	0% {
-		opacity: .3;
-		-webkit-transform: translateY(100%) rotateX(-90deg);
 		        transform: translateY(100%) rotateX(-90deg);
 	}
 
 	50% {
-		-webkit-animation-timing-function: ease-out;
 		        animation-timing-function: ease-out;
-		-webkit-transform: translateY(50%) translateZ(-200px) rotateX(-45deg);
 		        transform: translateY(50%) translateZ(-200px) rotateX(-45deg);
-	}
-}
-
-@-webkit-keyframes rotateCubeTopIn {
-	0% {
-		opacity: .3;
-		-webkit-transform: translateY(100%) rotateX(-90deg);
-	}
-
-	50% {
-		-webkit-animation-timing-function: ease-out;
-		-webkit-transform: translateY(50%) translateZ(-200px) rotateX(-45deg);
 	}
 }
 
 @keyframes rotateCubeBottomOut {
 	50% {
-		-webkit-animation-timing-function: ease-out;
 		        animation-timing-function: ease-out;
-		-webkit-transform: translateY(50%) translateZ(-200px) rotateX(-45deg);
 		        transform: translateY(50%) translateZ(-200px) rotateX(-45deg);
 	}
 
 	100% {
-		opacity: .3;
-		-webkit-transform: translateY(100%) rotateX(-90deg);
 		        transform: translateY(100%) rotateX(-90deg);
-	}
-}
-
-@-webkit-keyframes rotateCubeBottomOut {
-	50% {
-		-webkit-animation-timing-function: ease-out;
-		-webkit-transform: translateY(50%) translateZ(-200px) rotateX(-45deg);
-	}
-
-	100% {
-		opacity: .3;
-		-webkit-transform: translateY(100%) rotateX(-90deg);
 	}
 }
 
 @keyframes rotateCubeBottomIn {
 	0% {
-		opacity: .3;
-		-webkit-transform: translateY(-100%) rotateX(90deg);
 		        transform: translateY(-100%) rotateX(90deg);
 	}
 
 	50% {
-		-webkit-animation-timing-function: ease-out;
 		        animation-timing-function: ease-out;
-		-webkit-transform: translateY(-50%) translateZ(-200px) rotateX(45deg);
 		        transform: translateY(-50%) translateZ(-200px) rotateX(45deg);
-	}
-}
-@-webkit-keyframes rotateCubeBottomIn {
-	0% {
-		opacity: .3;
-		-webkit-transform: translateY(-100%) rotateX(90deg);
-	}
-
-	50% {
-		-webkit-animation-timing-function: ease-out;
-		-webkit-transform: translateY(-50%) translateZ(-200px) rotateX(45deg);
 	}
 }
 
@@ -216,10 +143,8 @@ html,body {
 	border-radius: 50%;
 	margin: 0 3px;
 	background: rgba( 255, 255, 255, 0.5 );
-	-webkit-box-shadow: 0px 0px 4px rgba( 0, 0, 0, 0.2 );
 	        box-shadow: 0px 0px 4px rgba( 0, 0, 0, 0.2 );
 	cursor: pointer;
-	-webkit-tap-highlight-color: rgba( 0, 0, 0, 0 );
 }
 
 #bullets li:hover {
