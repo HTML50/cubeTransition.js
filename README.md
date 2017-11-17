@@ -35,14 +35,14 @@ Well, in this demo, I copied some style sheets from [deinterfaz's pageTransition
 
 **the regular way**, you can use your mouse wheel, keyborad (arrow key) and mobile swipe to control the page.
 
-```javascript
+```HTML
 <script src='js/jquery.min.js'></script>
-<script src='js/wheel-indicator.js'></script>
-<script src="js/jquery.touchSwipe.js"></script>
+<script src='js/wheel-indicator.js'></script>	 
+<script src="js/jquery.touchSwipe.js"></script>  
 <script src="js/cubeTransition.js"></script>
 ```
 
-**3 ** done, and remember to write CSS style for your element.
+**3** done, and remember to write CSS style for your element.
 
 
 
@@ -61,7 +61,7 @@ if you don't need some control method, delete `EventLinstener` in `cubeTransitio
     });
     indicator.getOption('preventMouse'); // true
 //update this instead of mousewheel.js
-//in issuses#2 some friend want to use this plugin on MAC track pad
+//in issuses#2 a friend want to use this plugin on MAC track pad
 
 //arrow key
 $(document).keydown(function(e) {

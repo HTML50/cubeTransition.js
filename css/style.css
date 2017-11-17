@@ -18,8 +18,6 @@ html,body {
 	height: 100%;
 	-webkit-perspective: 1200px;
 	perspective: 1200px;
-	-webkit-perspective-origin: 50%;
-	perspective-origin: 50%;
 	-webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d;
 }
@@ -97,14 +95,14 @@ html,body {
 	50% {
 		-webkit-animation-timing-function: ease-out;
 		        animation-timing-function: ease-out;
-		-webkit-transform: translateY(-50%) translateZ(-200px) rotateX(45deg);
-		        transform: translateY(-50%) translateZ(-200px) rotateX(45deg);
+
+      transform: translateY(-50%) translateZ(-200px) rotateX(45deg);
 	}
 
 	100% {
 		opacity: .3;
 		-webkit-transform: translateY(-100%) rotateX(90deg);
-		        transform: translateY(-100%) rotateX(90deg);	
+      transform: translateY(-100%) rotateX(90deg);	
 	}
 	
 }
