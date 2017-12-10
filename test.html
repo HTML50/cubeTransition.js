@@ -23,14 +23,16 @@ html,body {
   position: relative;
   width: 100%;
   height: 100%;
-  perspective: 1200px;
+  perspective: 1000px;
+
 }
 
 .pd{
-    position: relative;
+  position: relative;
   width: 100%;
   height: 100%;
   transform-style: preserve-3d;
+  
 }
 
 .pd div {
@@ -76,72 +78,70 @@ h2 {
 
 .rotateCubeTopOut {
   transform-origin: 50% 100%;
-  animation: rotateCubeTopOut .6s;
+  animation: rotateCubeTopOut .61s ease-in;
 }
 
 .rotateCubeTopIn {
   transform-origin: 50% 0%;
-  animation: rotateCubeTopIn .6s;
+  animation: rotateCubeTopIn .6s ease-in;
 }
 
 .rotateCubeBottomOut {
   transform-origin: 50% 0%;
-  animation: rotateCubeBottomOut .6s both ease;
+  animation: rotateCubeBottomOut .61s ease-in;
 }
 
 .rotateCubeBottomIn {
   transform-origin: 50% 100%;
-  animation: rotateCubeBottomIn .6s both ease;
+  animation: rotateCubeBottomIn .6s ease-in;
 }
 
 @keyframes rotateCubeTopOut {
-  50% {
-    animation-timing-function: ease-in-out;
-      transform: translateY(-50%) translateZ(-200px) rotateX(45deg);
-  }
+	50% {
+	animation-timing-function: ease-out;
+      transform: translateY(-50%)  translateZ(-200px) rotateX(45deg);
+	}
 
-  100% {
-    transform: translateY(-100%) rotateX(90deg); 
-  }
-  
+	100% {
+      transform: translateY(-100%) translateZ(0)  rotateX(90deg);	
+	}
+	
 }
 
 
 @keyframes rotateCubeTopIn {
-  0% {
-    transform: translateY(100%) rotateX(-90deg);
-  }
+	0% {
+		        transform: translateY(100%)  translateZ(0)  rotateX(-90deg);
+	}
 
-  50% {
-
-    transform: translateY(50%) translateZ(-200px) rotateX(-45deg);
-  }
+	50% {
+	animation-timing-function: ease-out;
+		        transform: translateY(50%) translateZ(-200px) rotateX(-45deg);
+	}
 }
 
-
 @keyframes rotateCubeBottomOut {
-  50% {
- 
-            transform: translateY(50%) translateZ(-200px) rotateX(-45deg);
-  }
+	50% {	
+	animation-timing-function: ease-out;
+		        transform: translateY(50%) translateZ(-200px) rotateX(-45deg);
+	}
 
-  100% {
-       animation-timing-function: ease-in-out;
-            transform: translateY(100%) rotateX(-90deg);
-  }
+	100% {
+		        transform: translateY(100%)  translateZ(0)  rotateX(-90deg);
+	}
 }
 
 @keyframes rotateCubeBottomIn {
-  0% {
+	0% {
+		        transform: translateY(-100%)  translateZ(0)  rotateX(90deg);
+	}
 
-            transform: translateY(-100%) rotateX(90deg);
-  }
-
-  50% {
-     animation-timing-function: ease-in-out;
-            transform: translateY(-50%) translateZ(-200px) rotateX(45deg);
-  }
+	50% {
+	animation-timing-function: ease-out;
+		        transform: translateY(-50%) translateZ(-200px) rotateX(45deg);
+	}
 }
+
 
 </style>
 </head>
@@ -189,8 +189,9 @@ var onGoing = false,current=1,next=2,length = 4;
 
   function show() {
     document.querySelector('#cubeTransition>.pd>div:nth-child(' + next + ')').classList.add('visible');
-    document.querySelector('#cubeTransition>.pd>div:nth-child(' + current + ')').classList.add(outClass);
-    document.querySelector('#cubeTransition>.pd>div:nth-child(' + next + ')').classList.add(inClass);  
+        document.querySelector('#cubeTransition>.pd>div:nth-child(' + next + ')').classList.add(inClass); 
+	document.querySelector('#cubeTransition>.pd>div:nth-child(' + current + ')').classList.add(outClass);
+ 
 
     setTimeout(function() {
       document.querySelector('#cubeTransition>.pd>div:nth-child(' +current + ')').classList.remove('visible');
