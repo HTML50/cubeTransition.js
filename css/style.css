@@ -83,12 +83,12 @@ html,body {
 
 @keyframes rotateCubeTopOut {
 	50% {
-		        animation-timing-function: ease-out;
-      transform: translateY(-50%) translateZ(-200px) rotateX(45deg);
+			animation-timing-function: ease-out;
+			transform: translateY(-50%) translateZ(-200px) rotateX(45deg);
 	}
 
 	100% {
-      transform: translateY(-100%) rotateX(90deg);	
+      transform: translateY(-100%) translateZ(0) rotateX(90deg);	
 	}
 	
 }
@@ -96,7 +96,7 @@ html,body {
 
 @keyframes rotateCubeTopIn {
 	0% {
-		        transform: translateY(100%) rotateX(-90deg);
+		        transform: translateY(100%) translateZ(0) rotateX(-90deg);
 	}
 
 	50% {
@@ -112,13 +112,13 @@ html,body {
 	}
 
 	100% {
-		        transform: translateY(100%) rotateX(-90deg);
+		        transform: translateY(100%) translateZ(0) rotateX(-90deg);
 	}
 }
 
 @keyframes rotateCubeBottomIn {
 	0% {
-		        transform: translateY(-100%) rotateX(90deg);
+		        transform: translateY(-100%) translateZ(0) rotateX(90deg);
 	}
 
 	50% {
