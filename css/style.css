@@ -83,8 +83,8 @@ html,body {
 
 @keyframes rotateCubeTopOut {
 	50% {
-		        animation-timing-function: ease-out;
-      transform: translateY(-50%) translateZ(-200px) rotateX(45deg);
+			animation-timing-function: ease-out;
+			transform: translateY(-50%) translateZ(-200px) rotateX(45deg);
 	}
 
 	100% {
